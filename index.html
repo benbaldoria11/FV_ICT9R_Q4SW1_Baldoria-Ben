@@ -31,6 +31,7 @@
   h1{
     color: #ffc107;
     margin-bottom: 15px;
+    text-align:center;
   }
 
   label{
@@ -52,15 +53,15 @@
 <body>
 
 <div class="box">
-  <h1>Heat Index Checker</h1>
+  <h1>Login</h1>
 
-  <label>Username</label>
+<label>Username</label>
 <input type="text" class="form-control" placeholder="Input User Here...">
 
-<label for="humidity">Humidity in %</label>
-<input type="number" id="humidity" class="form-control" placeholder="Input percentage value">
+<label>Password</label>
+<input type="text" class="form-control" placeholder="Input Password Here...">
 
-<button type="submit" class="btn" onclick="checkHeat()">Login</button>
+<button type="submit" class="btn" onclick="loginHere()">Login</button>
 </div>
 
 <script>
@@ -69,7 +70,7 @@
 
 //Use Switch Code for the checkbox
 
-function function_name_here() {
+function loginHere() {
         let variable_name= document.getElementById("checkboxID").checked; 
          //when checked, it reads true
 
