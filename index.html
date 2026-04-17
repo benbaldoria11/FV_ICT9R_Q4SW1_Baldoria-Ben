@@ -48,6 +48,13 @@
     background: #ffc107;
     border-radius: 6px;
   }
+
+  div{
+    margin-top: 10px;
+  }
+  input{
+    margin-top: 10px;
+  }
     </style>
 </head>
 <body>
@@ -61,6 +68,11 @@
 <label>Password</label>
 <input type="text" class="form-control" placeholder="Input Password Here...">
 
+<div style="text-align:left; font-size: 12px;">
+    <input type="checkbox" id="check" onclick="rememberMe()"> Stay logged in
+    <p id="glasses"></p>
+</div>
+
 <button type="submit" class="btn" onclick="loginHere()">Login</button>
 </div>
 
@@ -70,19 +82,16 @@
 
 //Use Switch Code for the checkbox
 
-function loginHere() {
-        let variable_name= document.getElementById("checkboxID").checked; 
+function rememberMe(){
+        let box= document.getElementById("check").checked; 
          //when checked, it reads true
 
-        switch(variable_name) {
+        switch(box) {
             case true:
-                //use innerHTML to display a message
+                document.getElementById("glasses").innerHTML="Your credentials will be saved";
             break;
-
-            case false:
-                //use innerHTML to show nothing. use quotation;
-            break;
-
+            default:
+                document.getElementById("glasses").innerHTML="";
             //default may almost never needed since there is already true and false statement;
  }
 }
