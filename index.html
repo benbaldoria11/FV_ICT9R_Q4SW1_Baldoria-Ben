@@ -62,48 +62,42 @@
 <div class="box">
   <h1>Login</h1>
 
-<label>Username</label>
-<input type="text" class="form-control" placeholder="Input User Here...">
+<label for="name">Username</label>
+<input type="text" id="name" class="form-control" placeholder="Input User Here...">
 
-<label>Password</label>
-<input type="text" class="form-control" placeholder="Input Password Here...">
+<label for="word">Password</label>
+<input type="password" id="word" class="form-control" placeholder="Input Password Here...">
 
-<div style="text-align:left; font-size: 12px;">
+<div>
     <input type="checkbox" id="check" onclick="rememberMe()"> Stay logged in
     <p id="glasses"></p>
 </div>
 
-<button type="submit" class="btn" onclick="loginHere()">Login</button>
+<button type="button" class="btn" onclick="loginHere()">Login</button>
 </div>
 
 <script>
-//Use if-else statement for username and password verification. Use  === comparison operator and AND operator to check if condition is TRUE.
+function loginHere(){
+    let user = document.getElementById("name").value;
+    let pass = document.getElementById("word").value;
 
-
-//Use Switch Code for the checkbox
-
-let user = document.GetElementById().checked;
-let pass = document.GetElementById().checked;
-
-if(user == "" && pass == ""){
-    alert("Login Successful!");
-}
-
-else{
-    alert("Invalid Username and/or Password.");
+    if(user === "" && pass === ""){
+        alert("Please input your user and password.");
+    }
+    else{
+        alert("You have successfully logged in, " + user + "!");
+    }
 }
 
 function rememberMe(){
-        let box= document.getElementById("check").checked; 
-         //when checked, it reads true
+    let box = document.getElementById("check").checked; 
 
-        switch(box) {
-            case true:
-                document.getElementById("glasses").innerHTML="Your credentials will be saved";
-            break;
-            default:
-                document.getElementById("glasses").innerHTML="";
-            //default may almost never needed since there is already true and false statement;
+    switch(box) {
+        case true:
+            document.getElementById("glasses").innerHTML="Your credentials will be saved";
+        break;
+        default:
+            document.getElementById("glasses").innerHTML="";
  }
 }
 </script>
